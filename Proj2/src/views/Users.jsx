@@ -59,14 +59,14 @@ export default function Users(){
                         </tr>
                         </thead>
 
-                        <tbody>
+                        {loading && <tbody>
                         <tr>
                             <td colSpan="5" className="text-center">Loading....</td>
                         </tr>
                         </tbody>
-
-                        <tbody>
-                        {users.map(u=>(
+                        }
+                        {!loading && <tbody>
+                            {users.map(u=>(
                                 <tr>
                                     <td>{u.id}</td>
                                     <td>{u.name}</td>
@@ -82,10 +82,9 @@ export default function Users(){
                                 </tr>
 
 
-                            )
-                        )}
+                            ))}
                         </tbody>
-
+                        }
 
                     </table>
 
